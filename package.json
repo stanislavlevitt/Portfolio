@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-mate",
+  "name": "Stanislav-Levitt-Portfolio",
   "version": "2.5.2",
-  "description": "Gatsby v2 starter to create a top notch portfolio!",
+  "description": "Stanislav Levitt Portfolio",
   "main": "index.js",
   "scripts": {
     "build": "gatsby clean && gatsby build",
@@ -16,21 +16,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EmaSuriano/gatsby-starter-mate.git"
+    "url": "git+https://github.com/stanislavlevitt/Portfolio"
   },
   "keywords": [
-    "gatsby",
-    "starter",
-    "contentful",
-    "PWA",
-    "portfolio"
+    "Stanislav Levitt",
+    "software",
+    "engineer",
+    "developer",
+    "full-stack",
+    "react",
+    "portfolio",
+    "New York, NY",
+    "javascript",
+    "front-end"
   ],
-  "author": "Ema Suriano",
+  "author": "Stanislav Levitt",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/EmaSuriano/gatsby-starter-mate/issues"
   },
-  "homepage": "https://github.com/EmaSuriano/gatsby-starter-mate#readme",
+  "homepage": "https://github.com/stanislavlevitt/Portfolio#readme",
   "dependencies": {
     "@rebass/preset": "^4.0.5",
     "@tippy.js/react": "^3.1.1",
