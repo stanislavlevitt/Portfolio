@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass/styled-components';
 import { StaticQuery, graphql } from 'gatsby';
@@ -140,59 +140,138 @@ const Project = ({
   type,
   publishedDate,
   logo,
+  youtubeLink,
+  bullet1,
+  bullet2,
+  bullet3
 }) => {
   const [expandCard, setexpandCard] = useState(false);
   const toggleExpandCard = () => setexpandCard(value => !value);
 
   return (
-  <Card p={0} onClick={toggleExpandCard}>
-    <Flex style={{ height: CARD_HEIGHT }}>
-      <TextContainer style={containerStyle}>
-        <span>
-          <Title my={2} pb={1} color="text">
-            {name}
-          </Title>
-        </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-          {description}
-        </Text>
-      </TextContainer>
+    <>
+      {expandCard ? (
+        <Card p={0} onClick={toggleExpandCard}>
+          <Flex style={{ height: CARD_HEIGHT }}>
+            <TextContainer style={containerStyle}>
+              <span>
+                <Title my={2} pb={1} color="text">
+                  {name}
+                </Title>
+              </span>
+              <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+                {description}
+              </Text>
+              <Flex
+                style={{
+                float: 'left',
+              }}
+              >
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="Check repository"
+                    fontAwesomeIcon="github"
+                    url={repositoryUrl}
+                  />
+                </Box>
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="See project"
+                    fontAwesomeIcon="globe"
+                    url={projectUrl}
+                  />
+                </Box>
+              </Flex>
+            </TextContainer>
 
-      <ImageContainer>
-        <ProjectImage src={logo.image.src} alt={logo.title} />
-        <ProjectTag>
-          <Flex
-            style={{
-              float: 'right',
-            }}
-          >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
+            <ImageContainer>
+              <ProjectImage src={logo.image.src} alt={logo.title} />
+              <ProjectTag>
+                <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
+                  {type}
+                </ImageSubtitle>
+                <Hide query={MEDIA_QUERY_SMALL}>
+                  <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+                </Hide>
+              </ProjectTag>
+            </ImageContainer>
           </Flex>
-          <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-            {type}
-          </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
-        </ProjectTag>
-      </ImageContainer>
-    </Flex>
-  </Card>
-  )
-};
+        </Card>
+    ):(
+      <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={toggleExpandCard}>
+        <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: "column" }}>
+          <Flex height="200px">
+            <ExpandedTextContainer style={containerStyle}>
+              <span>
+                <Title my={2} pb={1} color="text">
+                  {name}
+                </Title>
+              </span>
+              <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+                {description}
+              </Text>
+              <Flex
+                style={{
+                float: 'left',
+              }}
+              >
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="Check repository"
+                    fontAwesomeIcon="github"
+                    url={repositoryUrl}
+                  />
+                </Box>
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="See project"
+                    fontAwesomeIcon="globe"
+                    url={projectUrl}
+                  />
+                </Box>
+              </Flex>
+            </ExpandedTextContainer>
+
+            <ImageContainer style={containerStyle}>
+              <div>
+                <ProjectImage src={logo.image.src} alt={logo.title} />
+                <ProjectTag>
+                  <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
+                    {type}
+                  </ImageSubtitle>
+                  <Hide query={MEDIA_QUERY_SMALL}>
+                    <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+                  </Hide>
+                </ProjectTag>
+              </div>
+            </ImageContainer>
+          </Flex>
+          {youtubeLink ? <div padding-top="56.25%"><iframe title={youtubeLink} width="100%" src={youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : null}
+          <DetailedTextContainer>
+            {bullet1 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {bullet1}
+              </Text>
+          ) : null}
+            {bullet2 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {bullet2}
+              </Text>
+          ) : null}
+            {bullet3 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {bullet3}
+              </Text>
+          ) : null}
+          </DetailedTextContainer>
+        </Flex>
+      </ExpandedCard>
+      )}
+    </>
+    )}
 
 Project.propTypes = {
   name: PropTypes.string.isRequired,
@@ -201,6 +280,10 @@ Project.propTypes = {
   repositoryUrl: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   publishedDate: PropTypes.string.isRequired,
+  bullet1: PropTypes.string,
+  bullet2: PropTypes.string,
+  bullet3: PropTypes.string,
+  youtubeLink: PropTypes.string,
   logo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
@@ -211,7 +294,7 @@ Project.propTypes = {
 
 const Projects = () => (
   <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" icon="💻" label="notebook" />
+    <Section.Header name="Projects" />
     <StaticQuery
       query={graphql`
         query ProjectsQuery {
@@ -220,9 +303,13 @@ const Projects = () => (
               id
               name
               description
+              bullet1
+              bullet2
+              bullet3
+              youtubeLink
               projectUrl
               repositoryUrl
-              publishedDate(formatString: "YYYY")
+              publishedDate(formatString: "MM / YYYY")
               type
               logo {
                 title
