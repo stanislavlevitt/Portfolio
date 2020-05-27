@@ -4,8 +4,10 @@ import { Image, Text, Flex, Box } from 'rebass/styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
+import { ExpandedCard } from '../components/ExpandedCard'
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
@@ -45,6 +47,8 @@ const Background = () => (
 );
 
 const CARD_HEIGHT = '200px';
+const EXPANDED_CARD_HEIGHT = 'auto';
+const EXPANDED_CARD_WIDTH = '100%';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -66,6 +70,25 @@ const TextContainer = styled.div`
   ${MEDIA_QUERY_SMALL} {
     width: calc(100% - (${CARD_HEIGHT} / 2));
   }
+`;
+
+const ExpandedTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 200px;
+  width: calc(100% - 200px);
+
+  ${MEDIA_QUERY_SMALL} {
+    width: calc(100% - (200px / 2));
+  }
+`;
+
+const DetailedTextContainer = styled.div`
+display: flex;
+flex-direction: column;
+padding: 10px;
+width: 100%;
 `;
 
 const ImageContainer = styled.div`
@@ -96,12 +119,18 @@ const ProjectTag = styled.div`
   height: ${CARD_HEIGHT};
   top: calc(
     -${CARD_HEIGHT} - 3.5px
-  ); /*don't know why I have to add 3.5px here ... */
+  );
 
   ${MEDIA_QUERY_SMALL} {
     top: calc(-${CARD_HEIGHT} - 3.5px + (${CARD_HEIGHT} / 4));
   }
 `;
+
+const containerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around"
+}
 
 const Project = ({
   name,
@@ -111,10 +140,14 @@ const Project = ({
   type,
   publishedDate,
   logo,
-}) => (
-  <Card p={0}>
+}) => {
+  const [expandCard, setexpandCard] = useState(false);
+  const toggleExpandCard = () => setexpandCard(value => !value);
+
+  return (
+  <Card p={0} onClick={toggleExpandCard}>
     <Flex style={{ height: CARD_HEIGHT }}>
-      <TextContainer>
+      <TextContainer style={containerStyle}>
         <span>
           <Title my={2} pb={1} color="text">
             {name}
@@ -158,7 +191,8 @@ const Project = ({
       </ImageContainer>
     </Flex>
   </Card>
-);
+  )
+};
 
 Project.propTypes = {
   name: PropTypes.string.isRequired,
