@@ -1,5 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, Flex} from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
@@ -36,8 +36,6 @@ const Background = () => (
 );
 
 const CARD_HEIGHT = '200px';
-const EXPANDED_CARD_HEIGHT = 'auto';
-const EXPANDED_CARD_WIDTH = '100%';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -59,25 +57,6 @@ const TextContainer = styled.div`
   ${MEDIA_QUERY_SMALL} {
     width: calc(100% - (${CARD_HEIGHT} / 2));
   }
-`;
-
-const ExpandedTextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 100%;
-  width: calc(100% - 200px);
-
-  ${MEDIA_QUERY_SMALL} {
-    width: calc(100% - (200px / 2));
-  }
-`;
-
-const DetailedTextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 100%;
 `;
 
 const ImageContainer = styled.div`
@@ -124,171 +103,36 @@ const containerStyle = {
 
 const SingleEducation = (props) =>{
   const {school,degree,location,completionDate,logo} = props
-  const [expandCard, setexpandCard] = useState(false);
-  const toggleExpandCard = () => setexpandCard(!expandCard);
-
-
   return (
-    <>
-      {expandCard ? (
-        <Card p={0} onClick={toggleExpandCard}>
-          <Flex style={{ height: CARD_HEIGHT }}>
-            <TextContainer style={containerStyle}>
-              <span>
-                <Title my={2} pb={1}>
-                  {title}
-                </Title>
-                <Text>{company}</Text>
-              </span>
+    <Card p={0}>
+      <Flex style={{ height: CARD_HEIGHT }}>
+        <TextContainer style={containerStyle}>
+          <span>
+            <Title my={2} pb={1}>
+              {degree}
+            </Title>
+            <Text>{school}</Text>
+          </span>
 
-              <Text my={2} pb={1}>
-                <FontAwesomeIcon name="map-marker" />
-                <i>{` ${location}`}</i>
-              </Text>
-            </TextContainer>
+          <Text my={2} pb={1}>
+            <FontAwesomeIcon name="map-marker" />
+            <i>{` ${location}`}</i>
+          </Text>
+        </TextContainer>
 
-            <ImageContainer>
-              <EducationImage
-                src={logo.image.src}
-                alt={logo.title}
-              />
-              <EducationTag>
-                <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
-              </EducationTag>
-            </ImageContainer>
-          </Flex>
-        </Card>
-      ) : (
-        <Card p={0} width={EXPANDED_CARD_WIDTH} onClick={toggleExpandCard}>
-          <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: 'column' }}>
-            <Flex height="200px">
-              <ExpandedTextContainer style={containerStyle}>
-                <span>
-                  <Title my={2} pb={1}>
-                    {title}
-                  </Title>
-                  <Text>{company}</Text>
-                </span>
-                <Text my={2} pb={1}>
-                  <FontAwesomeIcon name="map-marker" />
-                  <i>{` ${location}`}</i>
-                </Text>
-              </ExpandedTextContainer>
-
-              <ImageContainer style={containerStyle}>
-                <div>
-                  <EducationImage
-                    src={logo.image.src}
-                    alt={logo.title}
-                  />
-                  <EducationTag>
-                    <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
-                  </EducationTag>
-                </div>
-              </ImageContainer>
-            </Flex>
-            <DetailedTextContainer>
-              {bullet1 ? (
-                <Text
-                  width={[1]}
-                  style={{
-                  overflow: 'auto',
-                  paddingBottom: '.5em',
-                  display: 'flex',
-                }}
-                >
-                  <FontAwesomeIcon
-                    name="caret-right"
-                    style={{ paddingRight: '.5em' }}
-                  />
-                  {bullet1}
-                </Text>
-            ) : null}
-              {bullet2 ? (
-                <Text
-                  width={[1]}
-                  style={{
-                  overflow: 'auto',
-                  paddingBottom: '.5em',
-                  display: 'flex',
-                }}
-                >
-                  <FontAwesomeIcon
-                    name="caret-right"
-                    style={{ paddingRight: '.5em' }}
-                  />
-                  {bullet2}
-                </Text>
-            ) : null}
-              {bullet3 ? (
-                <Text
-                  width={[1]}
-                  style={{
-                  overflow: 'auto',
-                  paddingBottom: '.5em',
-                  display: 'flex',
-                }}
-                >
-                  <FontAwesomeIcon
-                    name="caret-right"
-                    style={{ paddingRight: '.5em' }}
-                  />
-                  {bullet3}
-                </Text>
-            ) : null}
-              {bullet4 ? (
-                <Text
-                  width={[1]}
-                  style={{
-                  overflow: 'auto',
-                  paddingBottom: '.5em',
-                  display: 'flex',
-                }}
-                >
-                  <FontAwesomeIcon
-                    name="caret-right"
-                    style={{ paddingRight: '.5em' }}
-                  />
-                  {bullet4}
-                </Text>
-            ) : null}
-              {bullet5 ? (
-                <Text
-                  width={[1]}
-                  style={{
-                  overflow: 'auto',
-                  paddingBottom: '.5em',
-                  display: 'flex',
-                }}
-                >
-                  <FontAwesomeIcon
-                    name="caret-right"
-                    style={{ paddingRight: '.5em' }}
-                  />
-                  {bullet5}
-                </Text>
-            ) : null}
-              {bullet6 ? (
-                <Text
-                  width={[1]}
-                  style={{
-                  overflow: 'auto',
-                  paddingBottom: '.5em',
-                  display: 'flex',
-                }}
-                >
-                  <FontAwesomeIcon
-                    name="caret-right"
-                    style={{ paddingRight: '.5em' }}
-                  />
-                  {bullet6}
-                </Text>
-            ) : null}
-            </DetailedTextContainer>
-          </Flex>
-        </Card>
-    )}
-    </>
+        <ImageContainer>
+          <EducationImage
+            src={logo.image.src}
+            alt={logo.title}
+          />
+          <EducationTag>
+            <ImageSubtitle bg="backgroundDark">
+              {completionDate}
+            </ImageSubtitle>
+          </EducationTag>
+        </ImageContainer>
+      </Flex>
+    </Card>
   )}
 
   SingleEducation.propTypes = {
