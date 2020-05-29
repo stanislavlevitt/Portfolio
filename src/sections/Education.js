@@ -166,7 +166,6 @@ const Education = () => (
                 }
               }
               completionDate(formatString: "YYYY")
-              endDate(formatString: "MM / YYYY")
               location
             }
           }
@@ -174,7 +173,7 @@ const Education = () => (
       `}
       render={({ contentfulAbout }) => (
         <CardContainer minWidth="350px">
-          {contentfulAbout.Education.map((p, i) => (
+          {contentfulAbout.education.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
               <SingleEducation {...p} />
             </Fade>
