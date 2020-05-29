@@ -124,20 +124,8 @@ const containerStyle = {
   justifyContent: 'space-around',
 };
 
-const SingleExperience = ({
-  company,
-  title,
-  location,
-  bullet1,
-  bullet2,
-  bullet3,
-  bullet4,
-  bullet5,
-  bullet6,
-  startDate,
-  endDate,
-  logo,
-}) =>{
+const SingleExperience = (props) =>{
+  const {company,title,location,bullet1,bullet2,bullet3,bullet4,bullet5,bullet6,startDate,endDate,logo} = props
   const [expandCard, setexpandCard] = useState(false);
   const toggleExpandCard = () => setexpandCard(!expandCard);
 

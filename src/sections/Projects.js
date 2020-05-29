@@ -132,19 +132,8 @@ const containerStyle = {
   justifyContent: "space-around"
 }
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
-  youtubeLink,
-  bullet1,
-  bullet2,
-  bullet3
-}) => {
+const Project = (props) => {
+  const {name,description,projectUrl,repositoryUrl,type,publishedDate,logo,youtubeLink,bullet1,bullet2,bullet3} = props
   const [expandCard, setexpandCard] = useState(false);
   const toggleExpandCard = () => setexpandCard(!expandCard);
 
