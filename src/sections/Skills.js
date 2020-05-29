@@ -129,6 +129,16 @@ const Skills = () => (
                 }
               }
             }
+            frontEnd {
+              id
+              skill
+              logo {
+                title
+                image: resize(width: 200, quality: 100) {
+                  src
+                }
+              }
+            }
           }
         }
       `}
@@ -146,6 +156,25 @@ const Skills = () => (
               className="card-container"
             >
               {contentfulAbout.computerLanguages.map((p, i) => (
+                <Fade bottom delay={i * 200} key={p.id}>
+                  <SingleSkill {...p} />
+                </Fade>
+          ))}
+            </CardContainer>
+          </div>
+          <hr color="#c60055" />
+          <div className="SingleSkillContainer">
+            <div className="SkillTitle">
+              <Title margin="1em"> Front End:</Title>
+            </div>
+            <CardContainer
+              minWidth="350px"
+              style={{
+          width: '80%',
+        }}
+              className="card-container"
+            >
+              {contentfulAbout.frontEnd.map((p, i) => (
                 <Fade bottom delay={i * 200} key={p.id}>
                   <SingleSkill {...p} />
                 </Fade>
