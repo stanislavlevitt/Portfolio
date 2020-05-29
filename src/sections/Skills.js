@@ -9,6 +9,7 @@ import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
+import '../../static/font-awesome-custom/portfolio.css';
 
 const Background = () => (
   <div>
@@ -93,7 +94,7 @@ const SingleSkill = (props) =>{
             alt={logo.title}
           />
           <SkillTag>
-            <ImageSubtitle bg="backgroundDark">
+            <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
               {skill}
             </ImageSubtitle>
           </SkillTag>

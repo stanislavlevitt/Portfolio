@@ -1,0 +1,13 @@
+.SingleSkillContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  align-items: center;
+}
+
+.SkillTitle {
+  width: 15%;
+  padding-top: 2em;
+}
