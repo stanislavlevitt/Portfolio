@@ -146,7 +146,7 @@ const Project = ({
   bullet3
 }) => {
   const [expandCard, setexpandCard] = useState(false);
-  const toggleExpandCard = () => setexpandCard(value => !value);
+  const toggleExpandCard = () => setexpandCard(!expandCard);
 
   return (
     <>
@@ -325,7 +325,7 @@ const Projects = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.projects.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-               <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} bullet4={p.bullet4} youtubeLink={p.youtubeLink} />
+              <Project {...p} />
             </Fade>
           ))}
         </CardContainer>
