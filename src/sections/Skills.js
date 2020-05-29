@@ -123,7 +123,7 @@ const Skills = () => (
               skill
               logo {
                 title
-                image: resize(width: 200, quality: 100) {
+                image: resize(height:200, width: 200, quality: 100) {
                   src
                 }
               }
@@ -133,7 +133,7 @@ const Skills = () => (
               skill
               logo {
                 title
-                image: resize(width: 200, quality: 100) {
+                image: resize(height:200,width: 200, quality: 100) {
                   src
                 }
               }
@@ -143,7 +143,7 @@ const Skills = () => (
               skill
               logo {
                 title
-                image: resize(width: 200, quality: 100) {
+                image: resize(height:200,width: 200, quality: 100) {
                   src
                 }
               }
@@ -153,7 +153,7 @@ const Skills = () => (
               skill
               logo {
                 title
-                image: resize(width: 200, quality: 100) {
+                image: resize(height:200,width: 200, quality: 100) {
                   src
                 }
               }
@@ -163,7 +163,7 @@ const Skills = () => (
               skill
               logo {
                 title
-                image: resize(width: 200, quality: 100) {
+                image: resize(height:200,width: 200, quality: 100) {
                   src
                 }
               }
@@ -173,7 +173,7 @@ const Skills = () => (
               skill
               logo {
                 title
-                image: resize(width: 200, quality: 100) {
+                image: resize(height:200,width: 200, quality: 100) {
                   src
                 }
               }
