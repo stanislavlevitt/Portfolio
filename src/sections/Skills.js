@@ -5,7 +5,6 @@ import { Image, Text, Flex} from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
-import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
@@ -38,26 +37,6 @@ const Background = () => (
 const CARD_HEIGHT = '200px';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
-
-const Title = styled(Text)`
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
-`;
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 100%;
-  width: calc(100% - ${CARD_HEIGHT});
-
-  ${MEDIA_QUERY_SMALL} {
-    width: calc(100% - (${CARD_HEIGHT} / 2));
-  }
-`;
 
 const ImageContainer = styled.div`
   margin: auto;
@@ -95,31 +74,11 @@ const SkillTag = styled.div`
   }
 `;
 
-const containerStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-around',
-};
-
 const SingleSkill = (props) =>{
   const {skill,logo} = props
   return (
     <Card p={0}>
       <Flex style={{ height: CARD_HEIGHT }}>
-        {/* <TextContainer style={containerStyle}>
-          <span>
-            <Title my={2} pb={1}>
-              {degree}
-            </Title>
-            <Text>{school}</Text>
-          </span>
-
-          <Text my={2} pb={1}>
-            <FontAwesomeIcon name="map-marker" />
-            <i>{` ${location}`}</i>
-          </Text>
-        </TextContainer> */}
-
         <ImageContainer>
           <SkillImage
             src={logo.image.src}
@@ -150,9 +109,9 @@ const Skills = () => (
     <Section.Header name="Skills" />
     <StaticQuery
       query={graphql`
-        query EducationQuery {
+        query KeySkillsQuery {
           contentfulAbout {
-            keySkills {
+            computerLanguages {
               id
               skill
               logo {
@@ -167,7 +126,7 @@ const Skills = () => (
       `}
       render={({ contentfulAbout }) => (
         <CardContainer minWidth="350px">
-          {contentfulAbout.keySkills.map((p, i) => (
+          {contentfulAbout.computerLanguages.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
               <SingleSkill {...p} />
             </Fade>
