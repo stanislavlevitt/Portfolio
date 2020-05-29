@@ -9,6 +9,7 @@ import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
+import '../../static/font-awesome-custom/portfolio.css';
 
 const Background = () => (
   <div>
@@ -34,7 +35,7 @@ const Background = () => (
   </div>
 );
 
-const CARD_HEIGHT = '200px';
+const CARD_HEIGHT = '150px';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -49,10 +50,8 @@ const Title = styled(Text)`
 const ImageContainer = styled.div`
   margin: auto;
   width: ${CARD_HEIGHT};
-
-  ${MEDIA_QUERY_SMALL} {
+  height: ${CARD_HEIGHT} ${MEDIA_QUERY_SMALL} {
     width: calc(${CARD_HEIGHT} / 2);
-    margin-top: 15%;
   }
 `;
 
@@ -63,10 +62,10 @@ const SkillImage = styled(Image)`
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
-    height: calc(${CARD_HEIGHT} / 2);
-    width: calc(${CARD_HEIGHT} / 2);
-    margin-top: calc(${CARD_HEIGHT} / 4);
-    padding: 10px;
+    height: ${CARD_HEIGHT};
+    width: ${CARD_HEIGHT};
+    margin-top: 0px;
+    padding: 40px;
   }
 `;
 
@@ -78,7 +77,7 @@ const SkillTag = styled.div`
   );
 
   ${MEDIA_QUERY_SMALL} {
-    top: calc(-${CARD_HEIGHT} - 3.5px + (${CARD_HEIGHT} / 4));
+    top: calc(-${CARD_HEIGHT} - 3.5px);
   }
 `;
 
@@ -93,7 +92,7 @@ const SingleSkill = (props) =>{
             alt={logo.title}
           />
           <SkillTag>
-            <ImageSubtitle bg="backgroundDark">
+            <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
               {skill}
             </ImageSubtitle>
           </SkillTag>

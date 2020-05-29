@@ -140,6 +140,78 @@ const Project = (props) => {
   return (
     <>
       {expandCard ? (
+        <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={toggleExpandCard}>
+          <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: "column" }}>
+            <Flex height="200px">
+              <ExpandedTextContainer style={containerStyle}>
+                <span>
+                  <Title my={2} pb={1} color="text">
+                    {name}
+                  </Title>
+                </span>
+                <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+                  {description}
+                </Text>
+                <Flex
+                  style={{
+                float: 'left',
+              }}
+                >
+                  <Box mx={1} fontSize={5}>
+                    <SocialLink
+                      name="Check repository"
+                      fontAwesomeIcon="github"
+                      url={repositoryUrl}
+                    />
+                  </Box>
+                  <Box mx={1} fontSize={5}>
+                    <SocialLink
+                      name="See project"
+                      fontAwesomeIcon="globe"
+                      url={projectUrl}
+                    />
+                  </Box>
+                </Flex>
+              </ExpandedTextContainer>
+
+              <ImageContainer style={containerStyle}>
+                <div>
+                  <ProjectImage src={logo.image.src} alt={logo.title} />
+                  <ProjectTag>
+                    <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
+                      {type}
+                    </ImageSubtitle>
+                    <Hide query={MEDIA_QUERY_SMALL}>
+                      <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+                    </Hide>
+                  </ProjectTag>
+                </div>
+              </ImageContainer>
+            </Flex>
+            {youtubeLink ? <div padding-top="56.25%"><iframe title={youtubeLink} width="100%" src={youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : null}
+            <DetailedTextContainer>
+              {bullet1 ? (
+                <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                  <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                  {bullet1}
+                </Text>
+          ) : null}
+              {bullet2 ? (
+                <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                  <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                  {bullet2}
+                </Text>
+          ) : null}
+              {bullet3 ? (
+                <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                  <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                  {bullet3}
+                </Text>
+          ) : null}
+            </DetailedTextContainer>
+          </Flex>
+        </ExpandedCard>
+      ): (
         <Card p={0} onClick={toggleExpandCard}>
           <Flex style={{ height: CARD_HEIGHT }}>
             <TextContainer style={containerStyle}>
@@ -163,13 +235,15 @@ const Project = (props) => {
                     url={repositoryUrl}
                   />
                 </Box>
-                <Box mx={1} fontSize={5}>
-                  <SocialLink
-                    name="See project"
-                    fontAwesomeIcon="globe"
-                    url={projectUrl}
-                  />
-                </Box>
+                {projectUrl ? (
+                  <Box mx={1} fontSize={5}>
+                    <SocialLink
+                      name="See project"
+                      fontAwesomeIcon="globe"
+                      url={projectUrl}
+                    />
+                  </Box>
+) : null}
               </Flex>
             </TextContainer>
 
@@ -186,79 +260,7 @@ const Project = (props) => {
             </ImageContainer>
           </Flex>
         </Card>
-    ):(
-      <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={toggleExpandCard}>
-        <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: "column" }}>
-          <Flex height="200px">
-            <ExpandedTextContainer style={containerStyle}>
-              <span>
-                <Title my={2} pb={1} color="text">
-                  {name}
-                </Title>
-              </span>
-              <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-                {description}
-              </Text>
-              <Flex
-                style={{
-                float: 'left',
-              }}
-              >
-                <Box mx={1} fontSize={5}>
-                  <SocialLink
-                    name="Check repository"
-                    fontAwesomeIcon="github"
-                    url={repositoryUrl}
-                  />
-                </Box>
-                <Box mx={1} fontSize={5}>
-                  <SocialLink
-                    name="See project"
-                    fontAwesomeIcon="globe"
-                    url={projectUrl}
-                  />
-                </Box>
-              </Flex>
-            </ExpandedTextContainer>
-
-            <ImageContainer style={containerStyle}>
-              <div>
-                <ProjectImage src={logo.image.src} alt={logo.title} />
-                <ProjectTag>
-                  <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
-                    {type}
-                  </ImageSubtitle>
-                  <Hide query={MEDIA_QUERY_SMALL}>
-                    <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-                  </Hide>
-                </ProjectTag>
-              </div>
-            </ImageContainer>
-          </Flex>
-          {youtubeLink ? <div padding-top="56.25%"><iframe title={youtubeLink} width="100%" src={youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : null}
-          <DetailedTextContainer>
-            {bullet1 ? (
-              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
-                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
-                {bullet1}
-              </Text>
-          ) : null}
-            {bullet2 ? (
-              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
-                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
-                {bullet2}
-              </Text>
-          ) : null}
-            {bullet3 ? (
-              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
-                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
-                {bullet3}
-              </Text>
-          ) : null}
-          </DetailedTextContainer>
-        </Flex>
-      </ExpandedCard>
-      )}
+    )}
     </>
     )}
 

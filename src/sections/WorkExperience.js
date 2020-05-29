@@ -95,7 +95,7 @@ const ImageContainer = styled.div`
 const ExperienceImage = styled(Image)`
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
-  padding: 40px;
+  padding: 55px;
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
@@ -133,34 +133,6 @@ const SingleExperience = (props) =>{
   return (
     <>
       {expandCard ? (
-        <Card p={0} onClick={toggleExpandCard}>
-          <Flex style={{ height: CARD_HEIGHT }}>
-            <TextContainer style={containerStyle}>
-              <span>
-                <Title my={2} pb={1}>
-                  {title}
-                </Title>
-                <Text>{company}</Text>
-              </span>
-
-              <Text my={2} pb={1}>
-                <FontAwesomeIcon name="map-marker" />
-                <i>{` ${location}`}</i>
-              </Text>
-            </TextContainer>
-
-            <ImageContainer>
-              <ExperienceImage
-                src={logo.image.src}
-                alt={logo.title}
-              />
-              <ExperienceTag>
-                <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
-              </ExperienceTag>
-            </ImageContainer>
-          </Flex>
-        </Card>
-      ) : (
         <Card p={0} width={EXPANDED_CARD_WIDTH} onClick={toggleExpandCard}>
           <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: 'column' }}>
             <Flex height="200px">
@@ -289,6 +261,34 @@ const SingleExperience = (props) =>{
             </DetailedTextContainer>
           </Flex>
         </Card>
+    ) : (
+      <Card p={0} onClick={toggleExpandCard}>
+        <Flex style={{ height: CARD_HEIGHT }}>
+          <TextContainer style={containerStyle}>
+            <span>
+              <Title my={2} pb={1}>
+                {title}
+              </Title>
+              <Text>{company}</Text>
+            </span>
+
+            <Text my={2} pb={1}>
+              <FontAwesomeIcon name="map-marker" />
+              <i>{` ${location}`}</i>
+            </Text>
+          </TextContainer>
+
+          <ImageContainer>
+            <ExperienceImage
+              src={logo.image.src}
+              alt={logo.title}
+            />
+            <ExperienceTag>
+              <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
+            </ExperienceTag>
+          </ImageContainer>
+        </Flex>
+      </Card>
     )}
     </>
   )}
