@@ -38,6 +38,14 @@ const CARD_HEIGHT = '200px';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
+const Title = styled(Text)`
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: table;
+  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+`;
+
 const ImageContainer = styled.div`
   margin: auto;
   width: ${CARD_HEIGHT};
@@ -106,7 +114,7 @@ const SingleSkill = (props) =>{
 
 const Skills = () => (
   <Section.Container id="skills" Background={Background}>
-    <Section.Header name="Skills" />
+    <Section.Header name="Key Skills" />
     <StaticQuery
       query={graphql`
         query KeySkillsQuery {
@@ -125,13 +133,27 @@ const Skills = () => (
         }
       `}
       render={({ contentfulAbout }) => (
-        <CardContainer minWidth="350px">
-          {contentfulAbout.computerLanguages.map((p, i) => (
-            <Fade bottom delay={i * 200} key={p.id}>
-              <SingleSkill {...p} />
-            </Fade>
+        <div className="AllSkillsContainer">
+          <div className="SingleSkillContainer">
+            <div className="SkillTitle">
+              <Title margin="1em"> Computer Languages:</Title>
+            </div>
+            <CardContainer
+              minWidth="350px"
+              style={{
+          width: '80%',
+        }}
+              className="card-container"
+            >
+              {contentfulAbout.computerLanguages.map((p, i) => (
+                <Fade bottom delay={i * 200} key={p.id}>
+                  <SingleSkill {...p} />
+                </Fade>
           ))}
-        </CardContainer>
+            </CardContainer>
+          </div>
+          <hr color="#c60055" />
+        </div>
       )}
     />
   </Section.Container>
