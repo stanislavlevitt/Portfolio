@@ -6,7 +6,6 @@ import Projects from '../sections/Projects';
 import Experience from '../sections/WorkExperience';
 import Education from '../sections/Education';
 import Skills from '../sections/Skills';
-import Writing from '../sections/Writing';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -19,7 +18,6 @@ const IndexPage = () => (
     <Experience />
     <Education />
     <Skills />
-    <Writing />
     <Footer />
   </Layout>
 );
