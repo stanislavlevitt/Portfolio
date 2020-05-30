@@ -1,4 +1,4 @@
-.SingleSkillContainer {
+.SingleItemContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.SkillTitle {
+.Title {
   width: 15%;
   padding-top: 2em;
 }

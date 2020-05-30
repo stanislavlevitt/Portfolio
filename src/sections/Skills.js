@@ -183,8 +183,8 @@ const Skills = () => (
       `}
       render={({ contentfulAbout }) => (
         <div>
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Computer Languages:</Title>
             </div>
             <CardContainer
@@ -202,8 +202,8 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Front End:</Title>
             </div>
             <CardContainer
@@ -221,8 +221,8 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Back End:</Title>
             </div>
             <CardContainer
@@ -240,8 +240,8 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Tech Tools:</Title>
             </div>
             <CardContainer
@@ -259,8 +259,8 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Creative and Analytical Tools:</Title>
             </div>
             <CardContainer
@@ -278,8 +278,8 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Spoken Languages:</Title>
             </div>
             <CardContainer
