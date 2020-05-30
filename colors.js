@@ -1,19 +1,16 @@
 module.exports = {
-  background: '#61d3d8', // Menu items
-  backgroundDark: '#002855', // Bottom Triangle/ Dates
+  background: '#61d3d8', // Containers
+  backgroundDark: '#002855', // Background
 
   text: '#333333',
 
-  primary: '#537dcc', // Main Text, Image sub
-  //#086375
-  primaryLight: '#499094', // Section Underline
-  primaryDark: '#023E7D', // Footer, Menu,  Corner Tri
-  // Menu Corner
+  primary: '#537dcc', // Image Subtitles
+  primaryLight: '#499094', //Underlines
+  primaryDark: '#023E7D', // Background
 
-  secondary: '#001233', // Logo Triangle //  Middle Tri
-  //Logo
-  secondaryLight: '#ff79b0', //Menu Underline // Left side Traingle
-  secondaryDark: '#c60055',  //Section Title // Right side Traingle
+  secondary: '#001233', // Background
+  // secondaryLight: '#ff79b0',
+  // secondaryDark: '#c60055',
 };
 
 /*
