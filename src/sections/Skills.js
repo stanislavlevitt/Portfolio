@@ -182,13 +182,13 @@ const Skills = () => (
         }
       `}
       render={({ contentfulAbout }) => (
-        <div className="AllSkillsContainer">
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+        <div>
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Computer Languages:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -202,12 +202,12 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Front End:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -221,12 +221,12 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Back End:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -240,12 +240,12 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Tech Tools:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -259,12 +259,12 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Creative and Analytical Tools:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -278,12 +278,12 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c60055" />
-          <div className="SingleSkillContainer">
-            <div className="SkillTitle">
+          <div className="SingleItemContainer">
+            <div className="Title">
               <Title margin="1em"> Spoken Languages:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}

@@ -10,6 +10,7 @@ import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
+import '../../static/font-awesome-custom/portfolio.css';
 
 const Background = () => (
   <div>
@@ -155,7 +156,20 @@ const Education = () => (
       query={graphql`
         query EducationQuery {
           contentfulAbout {
-            education {
+            schooling {
+              id
+              degree
+              school
+              logo {
+                title
+                image: resize(width: 200, quality: 100) {
+                  src
+                }
+              }
+              completionDate(formatString: "YYYY")
+              location
+            }
+            certificates {
               id
               degree
               school
@@ -172,13 +186,43 @@ const Education = () => (
         }
       `}
       render={({ contentfulAbout }) => (
-        <CardContainer minWidth="350px">
-          {contentfulAbout.education.map((p, i) => (
-            <Fade bottom delay={i * 200} key={p.id}>
-              <SingleEducation {...p} />
-            </Fade>
+        <div>
+          <div className="SingleItemContainer">
+            <div className="Title">
+              <Title margin="1em"> Schooling:</Title>
+            </div>
+            <CardContainer
+              minWidth="300px"
+              style={{
+          width: '80%',
+        }}
+            >
+              {contentfulAbout.schooling.map((p, i) => (
+                <Fade bottom delay={i * 200} key={p.id}>
+                  <SingleEducation {...p} />
+                </Fade>
           ))}
-        </CardContainer>
+            </CardContainer>
+          </div>
+          <hr color="#c60055" />
+          <div className="SingleItemContainer">
+            <div className="Title">
+              <Title margin="1em"> Certificates:</Title>
+            </div>
+            <CardContainer
+              minWidth="250px"
+              style={{
+          width: '80%',
+        }}
+            >
+              {contentfulAbout.certificates.map((p, i) => (
+                <Fade bottom delay={i * 200} key={p.id}>
+                  <SingleEducation {...p} />
+                </Fade>
+          ))}
+            </CardContainer>
+          </div>
+        </div>
       )}
     />
   </Section.Container>

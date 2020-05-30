@@ -344,7 +344,7 @@ const Experiences = () => (
         }
       `}
       render={({ contentfulAbout }) => (
-        <CardContainer minWidth="350px">
+        <CardContainer minWidth="300px">
           {contentfulAbout.workExperience.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
               <SingleExperience {...p} />
