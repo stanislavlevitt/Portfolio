@@ -66,7 +66,7 @@ const LandingPage = () => (
       render={({ contentfulAbout, site }) => {
         const { name, socialLinks, roles } = contentfulAbout;
         const { deterministicBehaviour } = site.siteMetadata;
-
+        console.log(socialLinks)
         return (
           <Fragment>
             <Heading

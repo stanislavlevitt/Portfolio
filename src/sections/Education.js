@@ -15,7 +15,7 @@ import '../../static/font-awesome-custom/portfolio.css';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryDark"
+      color="primaryDark"
       height={['50vh', '40vh']}
       width={['70vw', '70vw']}
       invertX
@@ -204,7 +204,7 @@ const Education = () => (
           ))}
             </CardContainer>
           </div>
-          <hr color="#c60055" />
+          <hr color="#499094" />
           <div className="SingleItemContainer">
             <div className="Title">
               <Title margin="1em"> Certificates:</Title>

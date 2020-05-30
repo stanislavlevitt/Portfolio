@@ -16,14 +16,14 @@ import Hide from '../components/Hide';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryLight"
+      color="secondary"
       height={['80vh', '80vh']}
       width={['100vw', '100vw']}
       invertX
     />
 
     <Triangle
-      color="background"
+      color="backgroundDark"
       height={['50vh', '20vh']}
       width={['50vw', '50vw']}
       invertX
