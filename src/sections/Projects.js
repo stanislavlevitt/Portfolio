@@ -57,7 +57,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.primaryLight} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -182,7 +182,7 @@ const Project = (props) => {
                       {type}
                     </ImageSubtitle>
                     <Hide query={MEDIA_QUERY_SMALL}>
-                      <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+                      <ImageSubtitle bg="primary">{publishedDate}</ImageSubtitle>
                     </Hide>
                   </ProjectTag>
                 </div>
@@ -254,7 +254,7 @@ const Project = (props) => {
                   {type}
                 </ImageSubtitle>
                 <Hide query={MEDIA_QUERY_SMALL}>
-                  <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+                  <ImageSubtitle bg="primary">{publishedDate}</ImageSubtitle>
                 </Hide>
               </ProjectTag>
             </ImageContainer>
