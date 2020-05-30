@@ -48,7 +48,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.primaryLight} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -156,7 +156,7 @@ const SingleExperience = (props) =>{
                     alt={logo.title}
                   />
                   <ExperienceTag>
-                    <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
+                    <ImageSubtitle bg="primary">{`${startDate} - ${endDate}`}</ImageSubtitle>
                   </ExperienceTag>
                 </div>
               </ImageContainer>
@@ -284,7 +284,7 @@ const SingleExperience = (props) =>{
               alt={logo.title}
             />
             <ExperienceTag>
-              <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
+              <ImageSubtitle bg="primary">{`${startDate} - ${endDate}`}</ImageSubtitle>
             </ExperienceTag>
           </ImageContainer>
         </Flex>
