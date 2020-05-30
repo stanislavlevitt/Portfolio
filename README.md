@@ -1,6 +1,6 @@
 # Stanislav Levitt - Portfolio
 
-- [LinkedIn](https://www.linkedin.com/in/stanislavlevitt/)
+- [LinkedIn](https://www.linkedin.com/in/stanislavlevitt/) | [Portfolio Site](https://stanislavlevitt.netlify.app/)
 
 ## Technical Skills
 
