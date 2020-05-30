@@ -182,7 +182,7 @@ const Skills = () => (
         }
       `}
       render={({ contentfulAbout }) => (
-        <div className="AllSkillsContainer">
+        <div>
           <div className="SingleSkillContainer">
             <div className="SkillTitle">
               <Title margin="1em"> Computer Languages:</Title>
