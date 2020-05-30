@@ -188,7 +188,7 @@ const Skills = () => (
               <Title margin="1em"> Computer Languages:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -207,7 +207,7 @@ const Skills = () => (
               <Title margin="1em"> Front End:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -226,7 +226,7 @@ const Skills = () => (
               <Title margin="1em"> Back End:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -245,7 +245,7 @@ const Skills = () => (
               <Title margin="1em"> Tech Tools:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -264,7 +264,7 @@ const Skills = () => (
               <Title margin="1em"> Creative and Analytical Tools:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
@@ -283,7 +283,7 @@ const Skills = () => (
               <Title margin="1em"> Spoken Languages:</Title>
             </div>
             <CardContainer
-              minWidth="350px"
+              minWidth="150px"
               style={{
           width: '80%',
         }}
