@@ -45,7 +45,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.primaryLight} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -127,7 +127,7 @@ const SingleEducation = (props) =>{
             alt={logo.title}
           />
           <EducationTag>
-            <ImageSubtitle bg="backgroundDark">
+            <ImageSubtitle bg="primary">
               {completionDate}
             </ImageSubtitle>
           </EducationTag>
