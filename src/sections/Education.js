@@ -15,7 +15,7 @@ import '../../static/font-awesome-custom/portfolio.css';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryDark"
+      color="primaryDark"
       height={['50vh', '40vh']}
       width={['70vw', '70vw']}
       invertX
@@ -45,7 +45,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.primaryLight} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -127,7 +127,7 @@ const SingleEducation = (props) =>{
             alt={logo.title}
           />
           <EducationTag>
-            <ImageSubtitle bg="backgroundDark">
+            <ImageSubtitle bg="primary">
               {completionDate}
             </ImageSubtitle>
           </EducationTag>
@@ -204,7 +204,7 @@ const Education = () => (
           ))}
             </CardContainer>
           </div>
-          <hr color="#c60055" />
+          <hr color="#499094" />
           <div className="SingleItemContainer">
             <div className="Title">
               <Title margin="1em"> Certificates:</Title>

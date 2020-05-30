@@ -58,9 +58,9 @@ const Header = () => {
 
             const homeLink = home && (
               <Image
-                src={Logo}
+                // src={Logo}
                 width="50px"
-                alt="Portfolio Logo"
+                // alt="Portfolio Logo"
                 onClick={home.onClick}
                 style={{
                   cursor: 'pointer',
@@ -95,9 +95,11 @@ const Header = () => {
                       )}
                 </Hide>
                 {navVisible ? (
+
                   <Fade right>
                     <Flex className="nav-bar">{navLinks}</Flex>
                   </Fade>
+
                     ) : null}
                 <Hide query={MEDIA_QUERY_SMALL}>
                   <Flex className="nav-bar">{navLinks}</Flex>
