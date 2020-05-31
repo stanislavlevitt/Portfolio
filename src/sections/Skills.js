@@ -261,7 +261,7 @@ const Skills = () => (
           <hr color="#499094" />
           <div className="SingleItemContainer">
             <div className="Title">
-              <Title margin="1em"> Creative and Analytical Tools:</Title>
+              <Title margin="1em"> Other Tools:</Title>
             </div>
             <CardContainer
               minWidth="150px"

@@ -73,7 +73,7 @@ const ImageContainer = styled.div`
 const EducationImage = styled(Image)`
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
-  padding: 45px;
+  padding: 55px;
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
